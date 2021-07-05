@@ -5,12 +5,21 @@
 {% block body %}
     <main main="role">
         <div class="container">
+            <div class="row mb-2" >
+                <div class="col-12">
+                    {% include 'flashbag.html.twig' %}
+                </div>
+            </div>
                 <div class="row row-cols-1 d-flex justify-content-around ">
-                    {% for n in notifications %}
+                    {% for n in notifications | sort | reverse %}
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
                                 <h5 class="card-title">{{ n.date | date ("m/d/Y") }}</h5>
-                                <p class="card-text">{{ n.subject }}</p>
+                                <p class="card-text">{{ n.subject | raw }}</p>
+                                {% if n.request and not n.request.isDone %}
+                                    <a href="{{ path('category_accept_request',{'id' : n.request.id}) }}">Accepter</a>
+                                    <a href="{{ path('category_deny_request',{'id' : n.request.id}) }}">Refuser</a>
+                                {% endif %}
                             </div>
                         </div>
 

@@ -1,38 +1,51 @@
-<nav class="navbar fixed-top d-flex flex-row flex-nowrap px-md-4 bg-white border-bottom shadow-md ">
-    <h1 class="my-0 ">
-		<a href="{{path('homepage')}}" class="navbar-brand text-secondary">
-			<h2>{{params.website.title}}</h2>
-		</a>
+{% if app.user %}
+    <button class="openbtn" onclick="openNav()"><i class="bi bi-info-circle"></i>
+    </button>
+    <div id="mySidebar" class="sidebar-left">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 
+        {# Mini logo avec nombre de notifications, premiere lettre du pseudo et nom d'utilisateur complet #}
+        {% if app.user %}
+            <button type="button" class="btn btn-link text-decoration-none no-shadow">
+                {% if app.user.numberUnreadNotifications != 0 %}
+                    <i class="bi bi-exclamation-circle"></i>{{ app.user.numberUnreadNotifications }}
+                {% endif %}
+                <div class="btn btn-light btn-outline-secondary rounded-circle avatar avatar-sm text-secondary">
+                    {{ app.user.username | first | capitalize }}
+                </div>
+                {{ app.user.username }}
+            </button>
+        {% endif %}
+
+        <a class="" href="{{ path('delegation_index') }}"><i
+                    class="bi bi-person-plus"></i> {{ 'delegations' | trans }}</a>
+        {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_ADMIN_RESTRICTED') %}
+            <a class="" href="{{ path('admin') }}"><i
+                        class="bi bi-sliders"></i> {{ 'admin' | trans }}</a>
+        {% endif %}
+        <a href="{{ path('user_edit_by_user') }}" class="-item">
+            <i class="bi bi-person-lines-fill"></i>
+            {{ 'profile' | trans }}
+        </a>
+        <a class="" href="{{ path('category_request') }}"><i
+                    class="bi bi-inboxes"></i> {{ 'categories.request' | trans }}</a>
+        <a class="" href="{{ path('notification') }}"><i
+                    class="bi bi-circle"></i> {{ 'notifications' | trans }}</a>
+        <a class="" href="{{ path('app_logout') }}"><i
+                    class="bi bi-box-arrow-right"></i> {{ 'logout' | trans }}</a>
+    </div>
+{% endif %}
+
+
+<div class="d-flex justify-content-center align-content-center">
+    <h1 class="align-content-center justify-content-center main-header-text">
+        <a href="{{ path('homepage') }}">
+            {% if website.title %}
+                {{ website.title }}
+            {% else %}
+                AGORA EX MACHINA
+            {% endif %}
+        </a>
     </h1>
-	<div class="d-none d-sm-block"><span class="badge badge-primary">{{ params.website.version}} - #{{ params.website.name }}</span></div>
 
-	{% if app.user %}	
-		<div class="btn-group ml-auto mt-0 flex-row text-nowrap">
-			<button type="button" class="btn btn-link text-decoration-none no-shadow" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-				{% if app.user.numberUnreadNotifications != 0 %}
-				<i class="fas fa-exclamation-circle"></i>{{ app.user.numberUnreadNotifications }}
-				{% endif %}
-
-				<div class="btn btn-light btn-outline-secondary rounded-circle avatar avatar-sm text-secondary">
-					{{ app.user.username | first | capitalize }}
-				</div>
-				{{ app.user.username }}
-			</button>
-			<div class="dropdown-menu dropdown-menu-lg-right shadow-sm">
-				<h4 class="p-2">{{ app.user.username }}</h4>
-				<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="{{ path('delegation_index') }}"><i class="fas fa-people-arrows"></i> {{ 'delegations' | trans }}</a>
-				{% if is_granted('ROLE_ADMIN') or is_granted('ROLE_ADMIN_RESTRICTED') %}
-					<a class="dropdown-item" href="{{path('admin')}}"><i class="fas fa-user-cog"></i> {{ 'admin' | trans}}</a>
-				{%endif%}
-				<a class="dropdown-item" href="{{ path('notification') }}"><i class="fas fa-dot-circle"></i> {{ 'notifications' | trans }}</a>
-				<a class="dropdown-item" href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt"></i> {{ 'logout' | trans }}</a>
-			</div>
-		</div>
-	{% else %}
-		<div class="ml-auto">	    
-			<a class="btn btn-outline-primary" href="{{path('app_login')}}">{{ 'signin' | trans }}</a>
-		</div>
-		{% endif %}
-</nav>
+</div>

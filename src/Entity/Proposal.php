@@ -4,8 +4,10 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ * Les propositions sont dans les ateliers et autorisent en leur sein des forums et des votes.
  * @ORM\Entity(repositoryClass="App\Repository\ProposalRepository")
  */
 class Proposal
@@ -14,36 +16,50 @@ class Proposal
 	 * @ORM\Id()
 	 * @ORM\GeneratedValue()
 	 * @ORM\Column(type="integer")
+     * @var int L'identifiant dans la BDD
 	 */
 	private $id;
 	/**
 	 * @ORM\ManyToOne(targetEntity="App\Entity\Workshop", inversedBy="proposals")
 	 * @ORM\JoinColumn(nullable=false)
+     * @var Workshop L'atelier attaché à la proposition
 	 */
 	private $workshop;
 	/**
 	 * @ORM\Column(type="string", length=255)
+     * @var string Le nom de la proposition
 	 */
 	private $name;
 	/**
 	 * @ORM\Column(type="text")
+     * @Assert\NotNull()
+     * @var string La description de la proposition
 	 */
 	private $description;
 	/**
 	 * @ORM\OneToMany(targetEntity="App\Entity\Forum", mappedBy="proposal", orphanRemoval=true)
+     * @var Collection|Forum[] Les forums attachés à la proposition
 	 */
 	private $forums;
 	/**
 	 * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="proposals")
 	 * @ORM\JoinColumn(nullable=false)
+     * @var User L'utilisateur ayant crée la proposition
 	 */
 	private $user;
 	/**
 	 * @ORM\OneToMany(targetEntity="App\Entity\Vote", mappedBy="proposal", orphanRemoval=true)
+     * @var Collection|Vote[] Les votes dans la proposition
 	 */
 	private $votes;
 
-	public function __construct()
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
+
+    public function __construct()
 	{
 		$this->votes	 = new ArrayCollection();
 		$this->forums	 = new ArrayCollection();

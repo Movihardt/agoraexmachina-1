@@ -12,10 +12,10 @@
 				</div>
 				<div class="row mb-2" >
 					<div class="col-12">
-						<a href="{{ path('workshop_admin') }}" class="btn btn-secondary btn-sm"><i class="fas fa-arrow-left"></i> {{ 'list_of' | trans }} {{ 'themes' | trans | lower }}</a>
-						<a href="{{ path('workshop_delete', {'workshop' : form.vars.value.id}) }}" class="btn btn-danger btn-sm" data-toggle="deleteConfirmation"><i class="fas fa-trash-alt"></i> {{ 'delete' | trans }}</a>
-						<a href="{{ path('workshop_add_document', {'workshop' : form.vars.value.id}) }}" class="btn btn-info btn-sm"><i class="fas fa-plus-square"></i> {{ 'add_document' | trans }}</a>
-						<a href="{{ path('workshop_edit_document', {'workshop' : form.vars.value.id}) }}" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> {{ 'edit_document' | trans }}</a>
+						<a href="{{ path('workshop_admin') }}" class="btn btn-secondary btn-sm"><i class="bi bi-arrow-bar-left"></i> {{ 'list_of' | trans }} {{ 'workshops' | trans | lower }}</a>
+						<a href="{{ path('workshop_delete', {'workshop' : form.vars.value.id}) }}" class="btn btn-danger btn-sm" data-toggle="deleteConfirmation"><i class="bi bi-trash"></i> {{ 'delete' | trans }}</a>
+						<a href="{{ path('workshop_add_document', {'workshop' : form.vars.value.id}) }}" class="btn btn-info btn-sm"><i class="bi bi-plus-square"></i> {{ 'add_document' | trans }}</a>
+						<a href="{{ path('workshop_edit_document', {'workshop' : form.vars.value.id}) }}" class="btn btn-info btn-sm"><i class="bi bi-lis-task"></i> {{ 'edit_document' | trans }}</a>
 
 					</div>
 				</div>
@@ -40,12 +40,132 @@
 						<div class="card">
 							<div class="card-body">
 								{% form_theme form 'bootstrap_4_layout.html.twig' %}
-								{{ form(form) }}
-							</div>
+								{{ form_start(form, {'attr': {'id': 'form_upload'}}) }}
+								{{ form_row(form.theme) }}
+								<div>{{ 'category' | trans }} :
+									<span id="js_category_theme_name">
+                                    </span>
+								</div>
+								{{ form_row(form.name) }}
+								{{ form_row(form.description) }}
+								{{ form_row(form.imageFile) }}
+								{{ form_row(form.dateBegin) }}
+								{{ form_row(form.dateEnd) }}
+								{{ form_row(form.dateVoteBegin) }}
+								{{ form_row(form.dateVoteEnd) }}
+								{{ form_row(form.rightsSeeWorkshop) }}
+								{{ form_row(form.rightsVoteProposals) }}
+								{{ form_row(form.rightsWriteProposals) }}
+								{{ form_row(form.quorumRequired) }}
+								{{ form_row(form.rightsDelegation) }}
+								{{ form_row(form.keytext) }}
+								<div>{{ 'keyword' | trans }} :
+									<span id="js_keywords">
+                                    </span>
+								</div>
+								{{ form_rest(form) }}
+								{{ form_end(form) }}							</div>
 						</div>
 					</div>
 				</div>
 			</main>
 		</div>
 	</div>
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+{#  On a besoin de la version non slim de jquery pour avoir acces a l'ajax #}
+			 <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+<script >
+
+$("#workshop_imageFile_file").change(function () {
+    filePreview(this);
+});
+
+
+$(document).ready(function () {
+    let theme = $('#workshop_theme option:selected').text();
+    $.ajax({
+        url: '{{ path('category_ajax_theme') }}/'+theme,
+        type: 'POST',
+        dataType: 'json',
+        async: true,
+        beforeSend: function(){
+             $('#js_category_theme_name' ).html("<span class='spinner-border'></span>");
+        },
+        success: function (data,status) {
+            console.log(data);
+             $('#js_category_theme_name' ).html("<strong>"+data[0].category+"</strong>");
+        },
+        error: function (xhr, textStatus, errorThrown) {
+                    alert('Ajax request failed.');
+                }
+    });
+
+
+
+    $('#workshop_theme').on('change',function () {
+       theme = $('#workshop_theme option:selected').text();
+    $.ajax({
+        url: '{{ path('category_ajax_theme') }}/'+theme,
+        type: 'POST',
+        dataType: 'json',
+        async: true,
+        beforeSend: function(){
+             $('#js_category_theme_name' ).html("<span class='spinner-border'></span>");
+        },
+        success: function (data,status) {
+            console.log(data);
+             $('#js_category_theme_name' ).html("<strong>"+data[0].category+"</strong>");
+        },
+        error: function (xhr, textStatus, errorThrown) {
+                    alert('Ajax request failed.');
+                }
+    });
+   })
+
+      $('#workshop_keytext').on('input',function () {
+       let text = $('#workshop_keytext').val();
+       let textArray = text.split(',');
+       let length = textArray.length;
+       text = textArray[length-1];
+       text = text.toLowerCase().trim();
+       console.log(text);
+       if (text !== '')
+           {
+           $.ajax({
+        url:"{{ path('keywords_ajax_call') }}/"+text,
+        type: 'POST',
+        dataType: 'json',
+        async: true,
+        beforeSend: function(){
+             $('#js_keywords').html("<span class='spinner-border'></span>");
+        },
+        afterSend:  function(){
+        },
+        success: function (data,status) {
+                         $('#js_keywords').html(' ');
+            data.map((e) => {
+              $('#js_keywords').append("<span class='keyword-suggest'>#"+e.key+" </span>");
+            })
+       let keyAnchors = $('.keyword-suggest');
+            keyAnchors.on('click',function () {
+                let chosenWord = $(this).text().slice(1);
+                 let currentInput = textArray.join(',');
+                 currentInput = currentInput.slice(0,-text.length);
+                 $('#workshop_keytext').val(currentInput+chosenWord+',');
+            })
+        },
+        error: function (xhr, textStatus, errorThrown) {
+                    console.log('Ajax request failed.');
+                }
+    })}
+   });
+
+
+})
+
+
+</script>
 {% endblock %}

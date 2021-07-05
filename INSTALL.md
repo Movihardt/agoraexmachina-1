@@ -23,38 +23,44 @@
 
 ### Avec composer
 
-`composer install`
+`composer install --no-dev --optimize-autoloader`
+
+`composer require symfony/dotenv`
 
 `php bin/console doctrine:database:create`
 
-`php bin/console doctrine:schema:update --force`
-
-`php bin/console doctrine:fixtures:load`
-
-*Dans le fichier .env, changer la ligne APP_ENV=dev en APP_ENV=prod*
-
-`composer install --no-dev --optimize-autoloader`
+`php bin/console doctrine:migrations:execute --up 1`
 
 
 ### Avec composer.phar
 
-`php composer.phar install` dans le répertoire agoraexmachina
+`php composer.phar install --no-dev --optimize-autoloader` dans le répertoire agoraexmachina
+
+`composer require symfony/dotenv`
 
 `php bin/console doctrine:database:create`
 
-`php bin/console doctrine:schema:update --force`
+`php bin/console doctrine:migrations:execute --up 1`
 
-`php bin/console doctrine:fixtures:load`
+### Ubuntu
 
-*Dans le fichier .env, changer la ligne APP_ENV=dev en APP_ENV=prod*
+`sudo composer install --no-plugins --no-scripts --no-dev --optimize-autoloader`
 
-`php composer.phar install --no-dev --optimize-autoloader`
+`sudo composer require symfony/dotenv --no-plugins --no-scripts`
 
+`sudo php bin/console doctrine:database:create`
+
+`sudo php bin/console doctrine:migrations:execute --up 1`
+
+`sudo chmod 777 public/img/upload`
+
+`sudo chmod 777 public/pdf/upload`
 ### Procédure post-installation
 
-* Dans un navigateur, se placer dans l’interface d’administration de AEM (http://mondomaine.com/agoraexmachina)
-* Se connecter en admin (en haut à droite, **Signin**)
-* L'identifiant est **admin@agora.com** et le mot de passe **agora**
+* Dans un navigateur, se placer dans l’interface d’administration de AEM (http://mondomaine.com/agoraexmachina/public)
+* S'enregistrer en admin
+* Pour configurer le mailer, il faut le changer dans le fichier .env https://symfony.com/doc/current/mailer.html.
+Si les problèmes persistent, il faut changer le regex utilisé pour récupérer l'email dans la fonction sendEmailToUser dans l'entité User
 
 ### Et ensuite
 

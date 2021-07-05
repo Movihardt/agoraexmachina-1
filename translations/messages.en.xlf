@@ -1,0 +1,617 @@
+<?xml version="1.0" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+        <!-- ******************************** -->
+        <!-- CORE -->
+        <!-- ******************************** -->
+            <trans-unit id="home">
+                <source>home</source>
+                <target>Home</target>
+            </trans-unit>
+            <trans-unit id="error403">
+                <source>error403</source>
+                <target>You do not have permission to access this page</target>
+            </trans-unit>
+            <trans-unit id="error404">
+                <source>error404</source>
+                <target>The requested page does not exist</target>
+            </trans-unit>
+            <trans-unit id="error">
+                <source>error</source>
+                <target>A technical error has occurred in processing your request. Please notify the site administrator</target>
+            </trans-unit>
+            <trans-unit id="dashboard">
+                <source>dashboard</source>
+                <target>dashboard</target>
+            </trans-unit>
+            <trans-unit id="list_of">
+                <source>list_of</source>
+                <target>List_of</target>
+            </trans-unit>
+            <trans-unit id="delete">
+                <source>delete</source>
+                <target>Delete</target>
+            </trans-unit>
+            <trans-unit id="add">
+                <source>add</source>
+                <target>Add</target>
+            </trans-unit>
+            <trans-unit id="edit">
+                <source>edit</source>
+                <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="profile">
+                <source>profile</source>
+                <target>Profile</target>
+            </trans-unit>
+            <trans-unit id="submit">
+                <source>submit</source>
+                <target>Submit</target>
+            </trans-unit>
+            <trans-unit id="name">
+                <source>name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="image_file">
+                <source>image_file</source>
+                <target>Image</target>
+            </trans-unit>
+            <trans-unit id="description">
+                <source>description</source>
+                <target>Description</target>
+            </trans-unit>
+            <trans-unit id="date_begin">
+                <source>begin_date</source>
+                <target>Start date</target>
+            </trans-unit>
+            <trans-unit id="date_end">
+                <source>date_end</source>
+                <target>End date</target>
+            </trans-unit>
+            <trans-unit id="date_vote_end">
+                <source>date_vote_end</source>
+                <target>Vote_end date</target>
+            </trans-unit>
+            <trans-unit id="date_vote_begin">
+                <source>vote_begin_date</source>
+                <target>Vote_begin date</target>
+            </trans-unit>
+            <trans-unit id="year">
+                <source>year</source>
+                <target>Year</target>
+            </trans-unit>
+            <trans-unit id="month">
+                <source>month</source>
+                <target>month</target>
+            </trans-unit>
+            <trans-unit id="day">
+                <source>day</source>
+                <target>day</target>
+            </trans-unit>
+
+            <trans-unit id="delete.success">
+                <source>delete.success</source>
+                <target>Deletion done</target>
+            </trans-unit>
+            <trans-unit id="report.success">
+                <source>report.success</source>
+                <target>Reporting performed</target>
+            </trans-unit>
+            <trans-unit id="request.accept">
+                <source>request.accept</source>
+                <target>request accepted</target>
+            </trans-unit>
+            <trans-unit id="request.deny">
+                <source>request.deny</source>
+                <target>Request denied</target>
+            </trans-unit>
+            <trans-unit id="add.success">
+                <source>add.success</source>
+                <target>Registered creation</target>
+            </trans-unit>
+            <trans-unit id="request.success">
+                <source>request.success</source>
+                <target>Request sent</target>
+            </trans-unit>
+            <trans-unit id="already.part-of-category">
+                <source>already.part-of-category</source>
+                <target>You are already part of this category</target>
+            </trans-unit>
+            <trans-unit id="actions">
+                <source>actions</source>
+                <target>Actions</target>
+            </trans-unit>
+            <trans-unit id="start">
+                <source>start</source>
+                <target>Start</target>
+            </trans-unit>
+            <trans-unit id="end">
+                <source>end</source>
+                <target>End</target>
+            </trans-unit>
+            <trans-unit id="search">
+                <source>search</source>
+                <target>search</target>
+            </trans-unit>
+            <trans-unit id="created_by">
+                <source>created_by</source>
+                <target>Created by</target>
+            </trans-unit>
+            <trans-unit id="details">
+                <source>details</source>
+                <target>Details</target>
+            </trans-unit>
+            <trans-unit id="members">
+                <source>members</source>
+                <target>Members</target>
+            </trans-unit>
+            <trans-unit id="timeline">
+                <source>timeline</source>
+                <target>Chronology</target>
+            </trans-unit>
+            <trans-unit id="today">
+                <source>today</source>
+                <target>Today</target>
+            </trans-unit>
+            <trans-unit id="from">
+                <source>from</source>
+                <target>From</target>
+            </trans-unit>
+            <trans-unit id="back">
+                <source>back</source>
+                <target>back</target>
+            </trans-unit>
+
+            <trans-unit id="edit.success">
+                <source>edit.success</source>
+                <target>Edit saved</target>
+            </trans-unit>
+            <trans-unit id="edit.authorization">
+                <source>edit.authorization</source>
+                <target>You do not have access</target>
+            </trans-unit>
+            <trans-unit id="jumbotron.1">
+                <source>jumbotron.1</source>
+                <target>AGORA Ex Machina facilitates decision making via "liquid democracy."</target>
+            </trans-unit>
+            <trans-unit id="jumbotron.2">
+                <source>jumbotron.2</source>
+                <target>The tool provides a simple and intuitive ecosystem to manage your decision lifecycle, from the initial idea through discussion, iteration and voting stages to validation.</target>
+            </trans-unit>
+            <trans-unit id="jumbotron.3">
+                <source>jumbotron.3</source>
+                <target>The term "Liquid" means that it is possible to delegate one's votes in a smooth and fast way. </target>
+            </trans-unit>
+            <trans-unit id="jumbotron.4">
+                <source>jumbotron.4</source>
+                <target>To get started, you need to log in as an administrator (default username "admin@mail.com" and default password "Password0@") and create your first categories. The categories will group your discussion and voting workshops.</target>
+            </trans-unit>
+            <trans-unit id="jumbotron.5">
+                <source>jumbotron.5</source>
+                <target>##If there is a problem, we are on **https://github.com/CRLbazin/agoraexmachina.**</target>
+            </trans-unit>
+            <trans-unit id="already.registered">
+                <source>already.registered</source>
+                <target>I already have an account</target>
+            </trans-unit>
+            <trans-unit id="participate">
+                <source>participate</source>
+                <target>I want to participate</target>
+            </trans-unit>
+
+            <trans-unit id="no-categories">
+                <source>no-categories</source>
+                <target>%link_start%You have no categories! You can request to join categories here%link_end%</target>
+            </trans-unit>
+
+        <!-- ******************************** -->
+        <!-- USERS -->
+        <!-- ******************************** -->
+            <trans-unit id="user">
+                <source>user</source>
+                <target>User</target>
+            </trans-unit>
+            <trans-unit id="users">
+                <source>users</source>
+                <target>Users</target>
+            </trans-unit>
+            <trans-unit id="signin">
+                <source>signin</source>
+                <target>Log in</target>
+            </trans-unit>
+            <trans-unit id="signin.please">
+                <source>signin.please</source>
+                <target>Please sign in</target>
+            </trans-unit>
+            <trans-unit id="signin.already">
+                <source>signin.already</source>
+                <target>You are already logged in</target>
+            </trans-unit>
+            <trans-unit id="username">
+                <source>username</source>
+                <target>Username</target>
+            </trans-unit>
+            <trans-unit id="role">
+                <source>role</source>
+                <target>Role</target>
+            </trans-unit>
+            <trans-unit id="roles">
+                <source>roles</source>
+                <target>Roles</target>
+            </trans-unit>
+            <trans-unit id="email">
+                <source>email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="password">
+                <source>password</source>
+                <target>Password</target>
+            </trans-unit>
+            <trans-unit id="or_create_account">
+                <source>or_create_account</source>
+                <target>Or_create_account</target>
+            </trans-unit>
+            <trans-unit id="or_sign_in">
+                <source>or_sign_in</source>
+                <target>Or sign in</target>
+            </trans-unit>
+            <trans-unit id="register">
+                <source>register</source>
+                <target>Register</target>
+            </trans-unit>
+            <trans-unit id="logout">
+                <source>logout</source>
+                <target>Log out</target>
+            </trans-unit>
+            <trans-unit id="admin">
+                <source>admin</source>
+                <target>Administration</target>
+            </trans-unit>
+            <trans-unit id="Forgot your password?">
+                <source>Forgot your password?</source>
+                <target>Forgot your password?</target>
+            </trans-unit>
+            <trans-unit id="firstname">
+                <source>firstname</source>
+                <target>Firstname</target>
+            </trans-unit>
+            <trans-unit id="lastname">
+                <source>lastname</source>
+                <target>Name</target>
+            </trans-unit>
+
+        <!-- ******************************** -->
+        <!-- THEME -->
+        <!-- ******************************** -->
+            <trans-unit id="themes">
+                <source>Themes</source>
+                <target>Themes</target>
+            </trans-unit>
+            <trans-unit id="theme">
+                <source>theme</source>
+                <target>Theme</target>
+            </trans-unit>
+            <trans-unit id="votes.with.delegation">
+                <source>votes.with.delegation</source>
+                <target>votes.with.delegation</target>
+            </trans-unit>
+            <trans-unit id="votes.without.delegation">
+                <source>votes.without.delegations</source>
+                <target>votes without delegations</target>
+            </trans-unit>
+            <trans-unit id="vote-three-levels">
+                <source>vote-three-levels</source>
+                <target>vote-three-levels</target>
+            </trans-unit>
+            <trans-unit id="vote-five-levels">
+                <source>vote-five-levels</source>
+                <target>vote-five-levels</target>
+            </trans-unit>
+            <trans-unit id="vote-weighted">
+                <source>vote-weighted</source>
+                <target>Vote-weighted</target>
+            </trans-unit>
+            <trans-unit id="no.themes">
+                <source>no.themes</source>
+                <target>No existing themes</target>
+            </trans-unit>
+
+
+        <!-- ******************************** -->
+        <!-- WORKSHOP -->
+        <!-- ******************************** -->
+            <trans-unit id="workshops">
+                <source>Workshops</source>
+                <target>Workshops</target>
+            </trans-unit>
+            <trans-unit id="workshop">
+                <source>workshop</source>
+                <target>Workshop</target>
+            </trans-unit>
+
+            <trans-unit id="rights.workshops.see">
+                <source>rights.workshops.see</source>
+                <target>Who can see the workshop</target>
+            </trans-unit>
+            <trans-unit id="rights.proposals.vote">
+                <source>rights.proposals.vote</source>
+                <target>Who can vote</target>
+            </trans-unit>
+            <trans-unit id="rights.proposals.write">
+                <source>rights.proposals.write</source>
+                <target>Who can write proposals</target>
+            </trans-unit>
+            <trans-unit id="quorum.required">
+                <source>quorum.required</source>
+                <target>Quorum required</target>
+            </trans-unit>
+            <trans-unit id="rights.delegations">
+                <source>rights.delegations</source>
+                <target>Delegation allowed</target>
+            </trans-unit>
+            <trans-unit id="no.rights.delegation">
+                <source>no.rights.delegation</source>
+                <target>Unauthorized delegation</target>
+            </trans-unit>
+            <trans-unit id="delegation.self.error">
+                <source>delegation.self.error</source>
+                <target>Delegation not possible</target>
+            </trans-unit>
+            <trans-unit id="everyone">
+                <source>everyone</source>
+                <target>Everyone</target>
+            </trans-unit>
+            <trans-unit id="results">
+                <source>results</source>
+                <target>Results</target>
+            </trans-unit>
+            <trans-unit id="percentage.required">
+                <source>percentage.required</source>
+                <target>From 0 to 100, percentage</target>
+            </trans-unit>
+
+
+        <!-- ******************************** -->
+        <!-- PROPOSAL -->
+        <!-- ******************************** -->
+            <trans-unit id="proposals">
+                <source>proposals</source>
+                <target>Proposals</target>
+            </trans-unit>
+            <trans-unit id="proposal">
+                <source>proposal</source>
+                <target>Proposal</target>
+            </trans-unit>
+            <trans-unit id="add_a_proposal">
+                <source>add_a_proposal</source>
+                <target>Add a proposal</target>
+            </trans-unit>
+            <trans-unit id="statusQuo">
+                <source>statusQuo</source>
+                <target>StatusQuo</target>
+            </trans-unit>
+            <trans-unit id="accepted">
+                <source>accepted</source>
+                <target>Accepted</target>
+            </trans-unit>
+            <trans-unit id="refused">
+                <source>refused</source>
+                <target>Refused</target>
+            </trans-unit>
+
+
+        <!-- ******************************** -->
+        <!-- FORUM -->
+        <!-- ******************************** -->
+            <trans-unit id="forums">
+                <source>forums</source>
+                <target>Forums</target>
+            </trans-unit>
+            <trans-unit id="forum">
+                <source>forum</source>
+                <target>Forum</target>
+            </trans-unit>
+
+
+        <!-- ******************************** -->
+        <!-- DELEGATION -->
+        <!-- ******************************** -->
+            <trans-unit id="delegations">
+                <source>delegations</source>
+                <target>Delegations</target>
+            </trans-unit>
+            <trans-unit id="delegation">
+                <source>delegation</source>
+                <target>Delegation</target>
+            </trans-unit>
+            <trans-unit id="delegationsgiven">
+                <source>Delegations given</source>
+                <target>Delegations given</target>
+            </trans-unit>
+            <trans-unit id="delegationreceived">
+                <source>Delegations received</source>
+                <target>Delegations received</target>
+            </trans-unit>
+            <trans-unit id="delegation.deleted">
+                <source>delegation.deleted</source>
+                <target>delegation deleted</target>
+            </trans-unit>
+            <trans-unit id="userFrom">
+                <source>userFrom</source>
+                <target>From user</target>
+            </trans-unit>
+            <trans-unit id="userTo">
+                <source>userTo</source>
+                <target>To user</target>
+            </trans-unit>
+            <trans-unit id="delegation.given">
+                <source>delegation.given</source>
+                <target>delegation given</target>
+            </trans-unit>
+            <trans-unit id="delegation.received">
+                <source>delegation.received</source>
+                <target>Delegations received</target>
+            </trans-unit>
+
+
+        <!-- ******************************** -->
+        <!-- VOTES -->
+        <!-- ******************************** -->
+            <trans-unit id="vote.success">
+                <source>vote.success</source>
+                <target>Vote taken into account</target>
+            </trans-unit>
+            <trans-unit id="vote.me">
+                <source>vote.me</source>
+                <target>Vote on my behalf</target>
+            </trans-unit>
+            <trans-unit id="vote.as">
+                <source>vote.as</source>
+                <target>Vote as</target>
+            </trans-unit>
+
+
+        <!-- ******************************** -->
+        <!-- FORUMS -->
+        <!-- ******************************** -->
+            <trans-unit id="reply">
+                <source>reply</source>
+                <target>reply</target>
+            </trans-unit>
+
+        <!-- ******************************** -->
+        <!-- CATEGORIES -->
+        <!-- ******************************** -->
+
+
+            <trans-unit id="categories">
+                <source>categories</source>
+                <target>Categories</target>
+            </trans-unit>
+            <trans-unit id="0">
+                <source>category</source>
+                <target>Category</target>
+            </trans-unit>
+            <trans-unit id="add_category">
+                <source>add_category</source>
+                <target>Add_category</target>
+            </trans-unit>
+            <trans-unit id="edit_category">
+                <source>edit_category</source>
+                <target>Manage categories</target>
+            </trans-unit>
+            <trans-unit id="add_user_to_category">
+                <source>add_user_to_category</source>
+                <target>Add user to category</target>
+            </trans-unit>
+            <trans-unit id="remove_user_from_category">
+                <source>remove_user_from_category</source>
+                <target>remove user from category</target>
+            </trans-unit>
+            <trans-unit id="no.categories">
+                <source>no.categories</source>
+                <target>No existing categories</target>
+            </trans-unit>
+
+
+        <!-- ******************************** -->
+        <!-- DOCUMENTS -->
+        <!-- ******************************** -->
+            <trans-unit id="add_document">
+                <source>add_document</source>
+                <target>Add document</target>
+            </trans-unit>
+            <trans-unit id="edit_document">
+                <source>edit_document</source>
+                <target>Manage documents</target>
+            </trans-unit>
+            <trans-unit id="pdf.max.size.1024">
+                <source>pdf.max.size.1024</source>
+                <target>The document must be in pdf format and under 1024kb</target>
+            </trans-unit>
+
+
+
+        <!-- ******************************** -->
+        <!-- NOTIFICATIONS -->
+        <!-- ******************************** -->
+            <trans-unit id="notifications">
+                <source>notifications</source>
+                <target>Notifications</target>
+            </trans-unit>
+
+        <!-- ******************************** -->
+        <!-- REQUESTS -->
+        <!-- ******************************** -->
+            <trans-unit id="request.accepted">
+                <source>request.accepted</source>
+                <target>Your request has been accepted, it is for the category </target>
+            </trans-unit>
+            <trans-unit id="request.denied">
+                <source>request.denied</source>
+                <target>Your request has been denied, it is for the category </target>
+            </trans-unit>
+
+        <!-- ******************************** -->
+        <!-- MISCELLANEOUS -->
+        <!-- ******************************** -->
+            <trans-unit id="siteproposepar">
+                <source>siteproposepar</source>
+                <target>This site is brought to you by</target>
+            </trans-unit>
+            <trans-unit id="configuration">
+                <source>configuration</source>
+                <target>Configuration</target>
+            </trans-unit>
+            <trans-unit id="send-request">
+                <source>send-request</source>
+                <target>send-request</target>
+            </trans-unit>
+            <trans-unit id="keyword.help">
+                <source>keyword.help</source>
+                <target>Comma separation</target>
+            </trans-unit>
+            <trans-unit id="keyword">
+                <source>keyword</source>
+                <target>keyword</target>
+            </trans-unit>
+            <trans-unit id="your-threads">
+                <source>your-threads</source>
+                <target>your-threads</target>
+            </trans-unit>
+            <trans-unit id="goto">
+                <source>goto</source>
+                <target>Go to page</target>
+            </trans-unit>
+            <trans-unit id="answer-to">
+                <source>answer-to</source>
+                <target>In response to</target>
+            </trans-unit>
+            <trans-unit id="your-proposals">
+                <source>your-proposals</source>
+                <target>your-proposals</target>
+            </trans-unit>
+            <trans-unit id="Menu">
+                <source>Menu</source>
+                <target>Menu</target>
+            </trans-unit>
+
+
+
+
+
+
+        </body>
+    </file>
+</xliff>
+
+
+
+
+
+
+
+
+
+

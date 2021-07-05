@@ -23,41 +23,43 @@
 
 ### Mit composer
 
-`composer install`
+`composer install --no-dev --optimize-autoloader`
+
+`composer require symfony/dotenv`
 
 `php bin/console doctrine:database:create`
 
-`php bin/console doctrine:schema:update --force`
-
-`php bin/console doctrine:fixtures:load`
-
-*(.env)
-APP_ENV=dev =>  APP_ENV=prod*
-
-`composer install --no-dev --optimize-autoloader`
+`php bin/console doctrine:migrations:execute --up 1`
 
 ### Mit composer.phar
 
-`php composer.phar install` im agoraexmachina-Verzeichnis
+`php composer.phar install --no-dev --optimize-autoloader` im agoraexmachina-Verzeichnis
 
-php bin/console doctrine:database:create`
+`composer require symfony/dotenv`
 
-`php bin/console doctrine:schema:update --force`
+`php bin/console doctrine:database:create`
 
-`php bin/console doctrine:fixtures:load`
+`php bin/console doctrine:migrations:execute --up 1`
 
-*(.env)
-APP_ENV=dev =>  APP_ENV=prod*
+### Ubuntu
 
-`php composer.phar install --no-dev --optimize-autoloader`
+`sudo composer install --no-plugins --no-scripts --no-dev --optimize-autoloader`
 
+`sudo composer require symfony/dotenv --no-plugins --no-scripts`
+
+`sudo php bin/console doctrine:database:create`
+
+`sudo php bin/console doctrine:migrations:execute --up 1`
+
+`sudo chmod 777 public/img/upload`
+
+`sudo chmod 777 public/pdf/upload`
 
 ### Verfahren nach der Installation
 
 * Gehen Sie in einem Browser auf die AEM-Verwaltungsoberfläche (http://mondomaine.com/agoraexmachina)
-* Ein Konto hinzufügen (oben rechts, **Signin**)
-* Login : **admin@agora.com**
-* Password: **agora**
+* **Register**
+
 
 ### Und dann
 

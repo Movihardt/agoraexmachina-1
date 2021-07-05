@@ -6,20 +6,26 @@
 parameters:
     params:
         website:
-            title : AGORA Ex Machina
-            version : v0.9.2
+         #  title : AGORA Ex Machina ou bien non?
+         #  version : v0.9.2
             language : fr
-            name : CRLBazin
+         #  name : CRLBazin
             lang : fr_FR
             ecriture : ltr
-            administrator:
-                email: crlbazin@gmail.com
+         #   administrator:
+         #       email: crlbazin@gmail.com
                 
     themes_images_directory: '/public/img/upload/themes'
     workshops_images_directory: '/public/img/upload/workshops'
     workshops_documents_directory: '/public/pdf/upload/workshops'
+    users_images_directory: '/public/img/upload/users'
+    wallpapers_images_directory: '/public/img/upload/wallpapers'
+    categories_images_directory: '/public/img/upload/categories'
+
     # ici vos autres variables
     app.locales: [en, fr]
+    app.app_env: '%env(APP_ENV)%'
+    app.smtp_email: '%env(MAILER_DSN)%'
 
 
 
@@ -43,3 +49,4 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    App\Twig\TwigGlobalSubscriber:

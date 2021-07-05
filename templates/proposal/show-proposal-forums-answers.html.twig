@@ -1,0 +1,23 @@
+{% for f in proposal.forums %}
+    {% if f.parentForum != "" and f.parentForum.id == forum.id %}
+        <div class="col-10 mb-3  flex-row float-right js-answer-hidden js-answer{{ f.parentForum.id }}">
+            <div class="forum-answer-border"
+                 style="width:75%;text-align:left;padding : 10px 10px 10px 0px;">
+                <div style="background-color : #EAEAEA;padding:	5px;">
+                    <span class="arrow-left"></span>
+                    <div class="content" style="padding : 10px">
+
+                        <h5 class="card-title">{{ f.name }}</h5>
+                        <span class="text-muted">{{ 'from' | trans }} {{ f.user.username }}</span>
+                        <hr/>
+                        <p class="card-text">{{ f.description | raw }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-9 d-flex m-1 flex-row-reverse">
+                <h5 class="avatar avatar-sm bg-secondary d-none d-lg-block">{{ f.user.username | first | capitalize }}</h5>
+                {% include 'proposal/show-proposal-forums-answers-buttons.html.twig' %}
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
